@@ -113,6 +113,23 @@
     });
   }
 
+  /* ---------- 作品墙：系列筛选 ---------- */
+  var tabs = document.querySelectorAll(".series-tab");
+  var cards = document.querySelectorAll(".work-card");
+  if (tabs.length && cards.length) {
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var key = tab.getAttribute("data-series");
+        tabs.forEach(function (t) { t.classList.remove("is-active"); });
+        tab.classList.add("is-active");
+        cards.forEach(function (c) {
+          var show = (key === "all") || (c.getAttribute("data-series") === key);
+          c.classList.toggle("is-hidden", !show);
+        });
+      });
+    });
+  }
+
   /* ---------- 外部链接新窗口 ---------- */
   document.querySelectorAll('a[href^="http"]').forEach(function (a) {
     a.target = "_blank"; a.rel = "noopener";

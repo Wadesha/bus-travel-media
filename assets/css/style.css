@@ -325,3 +325,71 @@ td b { color: var(--c-night); }
   .site-foot .foot-grid { grid-template-columns: 1fr; }
   .section { padding: 46px 0; }
 }
+
+/* ---------- 模拟作品墙 ---------- */
+.showcase { background: #fff; border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line); }
+.eyebrow--transit { color: var(--c-transit-dark); font-weight: 700; letter-spacing: .5px; }
+.showcase-head { text-align: center; max-width: 740px; margin: 0 auto; }
+.showcase-sub { color: #5a6675; margin-top: 6px; }
+.showcase-sub b { color: var(--c-transit-dark); }
+
+.series-tabs { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 28px 0 30px; }
+.series-tab { border: 1px solid var(--c-line); background: var(--c-paper); color: var(--c-ink);
+  padding: 8px 17px; border-radius: 999px; font-size: 14px; cursor: pointer; font-family: inherit; transition: .18s; }
+.series-tab:hover { border-color: var(--c-transit); color: var(--c-transit-dark); }
+.series-tab.is-active { background: var(--c-transit); border-color: var(--c-transit); color: #fff; }
+
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.work-card { border: 1px solid var(--c-line); border-radius: var(--radius); overflow: hidden;
+  background: var(--c-paper-2); transition: .2s; display: flex; flex-direction: column; }
+.work-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.work-card.is-hidden { display: none; }
+.work-thumb { aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; position: relative; }
+.work-thumb .play { width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,.92);
+  color: var(--c-night); display: flex; align-items: center; justify-content: center; font-size: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.2); }
+.thumb-a { background: linear-gradient(135deg, #ff6a2b, #ffb088); }
+.thumb-b { background: linear-gradient(135deg, #14202e, #3a5a7a); }
+.thumb-c { background: linear-gradient(135deg, #4caf7d, #a8e6c5); }
+.thumb-d { background: linear-gradient(135deg, #2f80ed, #9ec5ff); }
+.thumb-e { background: linear-gradient(135deg, #f2a93b, #ffe0a3); }
+.thumb-f { background: linear-gradient(135deg, #d9534f, #ffb3b0); }
+
+.work-body { padding: 15px 16px 17px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.series-badge { align-self: flex-start; font-size: 12px; padding: 3px 10px; border-radius: 999px; font-weight: 700; }
+.sb-beginner { background: #e6f6ee; color: #2e9e5b; }
+.sb-roam { background: #e8eefc; color: #2f80ed; }
+.sb-route { background: #fdeee0; color: #e2531a; }
+.sb-gear { background: #fff4dc; color: #b9791a; }
+.sb-edit { background: #fdeaea; color: #c0392b; }
+.work-title { font-size: 16px; margin: 0; line-height: 1.45; }
+.work-cap { font-size: 13.5px; color: #5a6675; margin: 0; flex: 1; }
+.work-stats { display: flex; gap: 14px; font-size: 12.5px; color: #7a8694;
+  border-top: 1px dashed var(--c-line); padding-top: 10px; }
+
+/* 评论墙 */
+.comment-wall { margin-top: 46px; background: var(--c-paper); border: 1px solid var(--c-line);
+  border-radius: var(--radius); padding: 24px 26px; }
+.cw-title { margin: 0 0 16px; font-size: 19px; }
+.cw-note { font-size: 13px; color: #9aa4b0; font-weight: 500; }
+.comment-list { display: flex; flex-direction: column; gap: 16px; }
+.comment { display: flex; gap: 12px; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; flex: 0 0 40px; display: flex;
+  align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 15px; }
+.av-1 { background: #ff6a2b; } .av-2 { background: #2f80ed; } .av-3 { background: #4caf7d; }
+.av-4 { background: #d9534f; } .av-5 { background: #8e44ad; } .av-6 { background: #f2a93b; }
+.av-7 { background: #16a085; } .av-8 { background: #34495e; }
+.comment-body { flex: 1; background: #fff; border: 1px solid var(--c-line); border-radius: 10px; padding: 10px 14px; }
+.comment-meta { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #7a8694; flex-wrap: wrap; }
+.comment-meta b { color: var(--c-ink); }
+.on-work { background: #e8eefc; color: #2f80ed; padding: 1px 8px; border-radius: 999px; font-size: 11.5px; }
+.c-like { margin-left: auto; color: #d9534f; }
+.comment-body p { margin: 6px 0 0; font-size: 14.5px; color: var(--c-ink); }
+
+@media (max-width: 880px) {
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .work-grid { grid-template-columns: 1fr; }
+  .comment-wall { padding: 18px 16px; }
+}
