@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>拍摄清单 · 可打印任务卡 | 公交漫游创作站</title>
+  <meta name="description" content="城市公交旅游短视频三档可打印拍摄清单：出发前、拍摄中、剪辑后检查项，A4 打印或存 PDF 随身带。">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* 打印优化：只打印清单主体，隐藏导航/页脚/按钮 */
+    @media print {
+      .site-nav, .site-foot, .no-print, .page-head .chips, .cta { display: none !important; }
+      body { background: #fff; }
+      .page-head { background: #fff !important; color: #1a2230 !important; padding: 0 0 10px !important; }
+      .page-head h1, .page-head .eyebrow { color: #1a2230 !important; }
+      .chk-sheet { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+      .checklist h2 { color: #1a2230; }
+      .chk-item { border-color: #bbb; }
+    }
+    .chk-toolbar { display: flex; gap: 12px; flex-wrap: wrap; margin: 18px 0 26px; align-items: center; }
+    .chk-sheet { border: 1px solid var(--c-line); border-radius: var(--radius); padding: 22px 26px; background: #fff; margin-bottom: 22px; }
+    .chk-sheet .lv-tag { display: inline-block; font-size: 12px; font-weight: 800; color: #fff; padding: 4px 11px; border-radius: 999px; margin-bottom: 10px; }
+    .chk-group { margin: 14px 0 4px; font-weight: 800; color: var(--c-night); font-size: 15px; }
+    .chk-item {
+      display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px dashed var(--c-line);
+    }
+    .chk-item:last-child { border-bottom: 0; }
+    .chk-box { width: 18px; height: 18px; border: 2px solid #b9b3a6; border-radius: 4px; flex: 0 0 auto; margin-top: 3px; }
+    .chk-item span { font-size: 14.5px; color: #3f4a59; }
+  </style>
+</head>
+<body data-page="checklist">
+
+  <header class="page-head">
+    <div class="container">
+      <div class="eyebrow">Checklist · 清单</div>
+      <h1>拍摄清单：打印带走，上车照做</h1>
+      <p>三档拍摄任务卡，出发前打印或存 PDF，逐项打勾，不漏拍、不返工。</p>
+      <div class="chips">
+        <span class="chip chip--lv1">入门卡</span>
+        <span class="chip chip--lv2">进阶卡</span>
+        <span class="chip chip--lv3">精通卡</span>
+        <span class="chip">A4 打印 / 存 PDF</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="crumb"><a href="../index.html">首页</a><span>›</span>拍摄清单</div>
+
+      <div class="chk-toolbar no-print">
+        <button class="btn btn--primary" onclick="window.print()">🖨 打印 / 存 PDF</button>
+        <a class="btn btn--ghost" href="../index.html">← 返回首页</a>
+        <span style="color:#6b7585;font-size:13.5px;">提示：打印时在浏览器设置选「A4、纵向、背景图形关」可获得干净清单。</span>
+      </div>
+
+      <!-- 入门卡 -->
+      <div class="chk-sheet" id="lv1">
+        <span class="lv-tag" style="background:var(--c-lv1);">入门档 · 手机固定窗景</span>
+        <h3 style="margin:0 0 4px;">简单拍摄清单</h3>
+
+        <div class="chk-group">□ 出发前</div>
+        <div class="chk-item"><span class="chk-box"></span><span>手机存储空间 ≥ 5GB（4K 很占地方）</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>车窗硅胶吸盘支架 / 八爪鱼就位</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>带充电宝 + 眼镜布（擦车窗内侧）</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>选靠窗座位，支架吸在前窗侧上方不挡司机</span></div>
+
+        <div class="chk-group">□ 拍摄中</div>
+        <div class="chk-item"><span class="chk-box"></span><span>原相机 4K 30fps，点屏锁 AE 防闪烁</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>整段录制，不分段，覆盖发车→下车</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>顺手录 5 秒环境音（报站/引擎）备用</span></div>
+
+        <div class="chk-group">□ 剪辑后</div>
+        <div class="chk-item"><span class="chk-box"></span><span>剪映「一键成片」套治愈/城市模板</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>加 1 句金句字幕，标题用结构公式</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>导出 1080P 60fps 竖屏 9:16</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>带话题 #城市公交 #公交窗景 发布</span></div>
+      </div>
+
+      <!-- 进阶卡 -->
+      <div class="chk-sheet" id="lv2">
+        <span class="lv-tag" style="background:var(--c-lv2);">进阶档 · 多景别 + 运镜</span>
+        <h3 style="margin:0 0 4px;">中等拍摄清单</h3>
+
+        <div class="chk-group">□ 出发前</div>
+        <div class="chk-item"><span class="chk-box"></span><span>稳定器充满电 + 手机满电 + 充电宝</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>备忘录写好 5 行脚本（见进阶篇模板）</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>规划景别比例：远10/中40/近30/特20</span></div>
+
+        <div class="chk-group">□ 拍摄中</div>
+        <div class="chk-item"><span class="chk-box"></span><span>远景：摇过站台/天际线（开场用）</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>中景：上车动作、车内乘客姿态</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>近景：侧脸看窗外、手扶栏杆</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>特写：光斑/车票/咖啡（情绪落点）</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>稳定器运镜：推/拉/摇/移各来 1 条</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>每段多拍 2 条备用</span></div>
+
+        <div class="chk-group">□ 剪辑后</div>
+        <div class="chk-item"><span class="chk-box"></span><span>按脚本粗剪骨架 → 卡点剪节奏</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>统一字幕样式（底居中白字灰描边）</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>转场处叠 0.5s 环境音（音量 30%）</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>基础调色：降饱和/提对比/压高光</span></div>
+      </div>
+
+      <!-- 精通卡 -->
+      <div class="chk-sheet" id="lv3">
+        <span class="lv-tag" style="background:var(--c-lv3);">精通档 · 多机位叙事</span>
+        <h3 style="margin:0 0 4px;">复杂拍摄清单</h3>
+
+        <div class="chk-group">□ 出发前</div>
+        <div class="chk-item"><span class="chk-box"></span><span>写完整分镜脚本（主题/情绪曲线/分镜/声音/金句）</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>A/B/C 三机位 + 领夹麦 + 运动相机就位</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>备好签名 LUT（晴/夜/雨三版）与音效库</span></div>
+
+        <div class="chk-group">□ 拍摄中</div>
+        <div class="chk-item"><span class="chk-box"></span><span>开拍时三机同步「拍手」做对齐信号</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>A 机主窗景全程 4K；B 机拍细节特写</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>C 机录旁白/环境音，挂车头第一视角</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>按镜号归档（如 28路-07）</span></div>
+
+        <div class="chk-group">□ 剪辑后</div>
+        <div class="chk-item"><span class="chk-box"></span><span>对齐多机位波形 → 蒙太奇按情绪重组</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>套 LUT + 局部蒙版修过曝/死黑</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>四层声音：底噪/BGM/点音效/旁白</span></div>
+        <div class="chk-item"><span class="chk-box"></span><span>填数据复盘表，写入下一周选题</span></div>
+      </div>
+
+      <div class="callout callout--bad no-print">
+        <b>安全红线（打印也请记住）：</b>不遮挡司机视线、不拍他人清晰正脸、不攀爬不探身、不干扰运营。每个城市规则不同，上车前确认。
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>
